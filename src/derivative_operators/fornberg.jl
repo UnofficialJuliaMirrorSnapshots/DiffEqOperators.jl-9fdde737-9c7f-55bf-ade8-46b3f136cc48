@@ -4,13 +4,16 @@
 # This implements the Fornberg (1988) algorithm (https://doi.org/10.1090/S0025-5718-1988-0935077-0)
 # to obtain Finite Difference weights over arbitrary points to arbitrary order
 
-function calculate_weights(order::Int, x0::T, x::Vector{T}) where T<:Real
+function calculate_weights(order::Int, x0::T, x::AbstractVector) where T<:Real
     #=
         order: The derivative order for which we need the coefficients
         x0   : The point in the array 'x' for which we need the coefficients
         x    : A dummy array with relative coordinates, eg. central differences
                need coordinates centred at 0 while those at boundaries need
                coordinates starting from 0 to the end point
+
+        The approximation order of the stencil is automatically determined from
+        the number of requested stencil points.
     =#
     N = length(x)
     @assert order < N "Not enough points for the requested order."
