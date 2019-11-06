@@ -3,7 +3,7 @@ module DiffEqOperators
 import Base: +, -, *, /, \, size, getindex, setindex!, Matrix, convert
 using DiffEqBase, StaticArrays, LinearAlgebra
 import LinearAlgebra: mul!, ldiv!, lmul!, rmul!, axpy!, opnorm, factorize, I
-import DiffEqBase: AbstractDiffEqLinearOperator, update_coefficients!, is_constant
+import DiffEqBase: AbstractDiffEqLinearOperator, update_coefficients!, isconstant
 using SparseArrays, ForwardDiff, BandedMatrices, NNlib, LazyArrays, BlockBandedMatrices
 using ModelingToolkit
 
@@ -38,6 +38,8 @@ include("derivative_operators/derivative_operator_functions.jl")
 include("composite_operators.jl")
 
 include("MOL_discretization.jl")
+
+include("docstrings.jl")
 
 # The (u,p,t) and (du,u,p,t) interface
 for T in [DiffEqScaledOperator, DiffEqOperatorCombination, DiffEqOperatorComposition]

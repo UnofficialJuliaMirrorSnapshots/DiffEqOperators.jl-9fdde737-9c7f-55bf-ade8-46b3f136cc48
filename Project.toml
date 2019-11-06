@@ -1,7 +1,7 @@
 name = "DiffEqOperators"
 uuid = "9fdde737-9c7f-55bf-ade8-46b3f136cc48"
 authors = ["Chris Rackauckas <accounts@chrisrackauckas.com>"]
-version = "4.2.0"
+version = "4.2.2"
 
 [deps]
 BandedMatrices = "aae01518-5342-5314-be14-df237901396f"
@@ -17,7 +17,7 @@ StaticArrays = "90137ffa-7385-5640-81b9-e52037218182"
 SuiteSparse = "4607b0f0-06f3-5cda-b6b1-a6196a1729e9"
 
 [compat]
-DiffEqBase = "6"
+DiffEqBase = "6.4.1"
 ModelingToolkit = "0.8.0"
 julia = "1"
 
